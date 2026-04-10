@@ -3,21 +3,54 @@
     "description": "A generic Filament custom dropdown component for tree structures (parent-child-grandchild).",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "laravel",
+        "filament",
+        "filamentphp",
+        "tree",
+        "dropdown",
+        "select",
+        "form",
+        "component"
+    ],
+    "homepage": "https://github.com/passasooz/filament-tree-dropdown",
     "authors": [
         {
             "name": "Francesco Passanante",
-            "email": "info@belicedigital.com"
+            "email": "info@belicedigital.com",
+            "role": "Developer"
         }
     ],
     "require": {
-        "php": ">=8.1",
-        "filament/filament": ">=3.0"
+        "php": "^8.1",
+        "filament/filament": "^3.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0"
     },
     "autoload": {
         "psr-4": {
             "Passasooz\\FilamentTreeDropdown\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Passasooz\\FilamentTreeDropdown\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "extra": {
         "laravel": {
             "providers": [

@@ -11,10 +11,29 @@ Supports single item selection, group selection and optional text search.
 composer require passasooz/filament-tree-dropdown
 ```
 
-Publish the view (optional, to customise it in your project):
+### Register the plugin in your Filament panel
+
+In your `PanelProvider` (e.g. `app/Providers/Filament/AdminPanelProvider.php`), add the plugin inside the `panel()` method:
+
+```php
+use Passasooz\FilamentTreeDropdown\FilamentTreeDropdownPlugin;
+
+public function panel(Panel $panel): Panel
+{
+    return $panel
+        // ... other configuration
+        ->plugins([
+            FilamentTreeDropdownPlugin::make(),
+        ]);
+}
+```
+
+### Publish the view (optional)
+
+To override the blade view in your project:
 
 ```bash
-php artisan vendor:publish --provider="Passasooz\FilamentTreeDropdown\FilamentTreeDropdownServiceProvider"
+php artisan vendor:publish --tag="filament-tree-dropdown-views"
 ```
 
 ---
